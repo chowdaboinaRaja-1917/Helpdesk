@@ -1,0 +1,63 @@
+<form action=""
+  class="bg-dark text-white p-2 rounded-2 d-flex align-items-center justify-content-center flex-column gap-2"
+  style="width: 400px;" #formcollection="ngForm">
+  <div>
+    <p class="text-warning fs-1">New ticket</p>
+  </div>
+  <div class=" d-flex flex-column w-75 ">
+    <label for="categeory" class="form-label">Select categeory <span class="text-danger">*</span></label>
+    <select name="categeory" id="categeory" class="form-select" required name="categeory" ngModel [(ngModel)]="categeory">
+      <option value="">--select categeory--</option>
+      <option value="Software Issue">Software issue</option>
+      <option value="Hardware issue">Hardware issue</option>
+    </select>
+    <div *ngIf="formcollection.controls['categeory'].hasError('required')&&formcollection.submitted"
+      class="text-danger">
+      Categeory can't  be left emty!.
+    </div>
+  </div>
+  <div class=" d-flex flex-column w-75 ">
+    <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+    <input type="text" id="subject" name="subject" class="form-control" required [(ngModel)]="subject" ngModel>
+    <div *ngIf="formcollection.controls['subject'].hasError('required')&&formcollection.submitted"
+      class="text-danger">
+      Subject can't  be left emty!.
+    </div>
+  </div>
+  <div class=" d-flex flex-column w-75 ">
+    <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+    <textarea name="description" id="description" class="form-control" required [(ngModel)]="description"
+      ngModel cols="2" rows="2"></textarea>
+    <div *ngIf="formcollection.controls['description'].hasError('required')&&formcollection.submitted"
+      class="text-danger">
+      Description can't  be left emty!.
+    </div>
+  </div>
+  <div class=" d-flex flex-column w-75 ">
+    <label for="Priority" class="form-label">Priority Level <span class="text-danger">*</span></label>
+    <select name="Priority" id="Priority" class="form-select" required [(ngModel)]="Priority" ngModel>
+      <option value="High">High</option>
+      <option value="Midium">Midium</option>
+      <option value="Low">Low</option>
+    </select>
+    <div *ngIf="formcollection.controls['Priority'].hasError('required')&&formcollection.submitted"
+      class="text-danger">
+      Priority Level  can't  be left emty!.
+    </div>
+  </div>
+  <div class=" d-flex flex-column w-75 " [ngModel]="Empid">
+    <label for="Empid" class="form-label">Empid</label>
+    <input type="text" id="Empid" name="Empid" class="form-control" [disabled]="disabled" ngModel [required]="false">
+    <div *ngIf="formcollection.controls['Empid'].hasError('required')&&formcollection.submitted"
+    class="text-danger">
+    Priority Level  can't  be left emty!.
+  </div>
+  </div>
+  <div class=" d-flex gap-2 w-75">
+    <input type="checkbox" id="onbehalf" name="onbehalf" class="form-check" (change)="textchange(formcollection)" [(ngModel)]="onbehalf">
+    <label for="onbehalf" class="form-label">On Behalf</label>
+  </div>
+  <div class="w-100 float-end">
+    <button class="btn btn-warning float-end" (click)="onSubmit(formcollection)">Create</button>
+  </div>
+</form>

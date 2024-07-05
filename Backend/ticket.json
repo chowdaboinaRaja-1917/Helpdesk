@@ -1,0 +1,26 @@
+{
+    "tickets": [
+      {
+        "id": "1",
+        "category": "Software Issue",
+        "subject": "Issue with login",
+        "description": "I am unable to login to the",
+        "status": "pending",
+        "priority": "Low",
+        "created_at": "2024-07-03T10:15:30Z",
+        "emp_id": "1001",
+        "on_behalf": true
+      },
+      {
+        "id": "2",
+        "category": "Software Issue",
+        "subject": "Issue with login",
+        "description": "I am unable to login to the",
+        "status": "pending",
+        "priority": "Heigh",
+        "created_at": "2024-07-03T10:15:30Z",
+        "emp_id": "1002",
+        "on_behalf": true
+      }
+    ]
+  }
